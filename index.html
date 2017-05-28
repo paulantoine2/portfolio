@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="PortfolioApp" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="app/css/animate.css" />
+  <link rel="stylesheet" href="app/css/font-awesome.css" />
+  <link rel="stylesheet" href="app/css/animations.css" />
+  <link rel="stylesheet" href="app/css/style.css" />
+  <base href="/portfolio_angular/">
+</head>
+<body ng-controller="RouteController">
+  <header class="fade animated" ng-include="'views/header.html'" ng-if="location != '/'"></header>
+  <main class="fade animated" ng-view></main>
+  <div id="visit-link" class="fade animated open" ng-include="'views/menu.html'" ng-if="location != '/'"></div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.6.4/angular-route.js"></script>
+<script src="https://code.angularjs.org/1.6.4/angular-animate.js"></script>
+<script src="app/app.js"></script>
+<script src="app/controller/home.js"></script>
+<script src="app/controller/web_projects.js"></script>
+<script src="app/controller/contact.js"></script>
+<script src="app/controller/skills.js"></script>
+<script src="app/controller/intro.js"></script>
+<script src="app/controller/route.js"></script>
+<script type="text/javascript">
+
+  $('#visit-link:not(.open) span').click( function(e){
+    $(this).parent().addClass('open');
+  });
+</script>
+</html>

@@ -1,0 +1,523 @@
+.ng-enter.fade{
+  animation-name: fadeIn;
+  /*animation-delay: 1s;*/
+}
+.ng-leave.fade{
+  animation-name: fadeOut;
+  animation-duration: 0.6s;
+}
+.delayed-fadein{
+  opacity: 0;
+  animation: fadeInUpCustom 0.5s ease forwards;
+  animation-delay: 0.5s;
+}
+body{
+  background-color: #322940;
+  font-family: 'Futura';
+  margin: 0;
+  cursor: pointer;
+}
+main{
+}
+header{
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
+header h1{
+  display: inline-block;
+  font-style: 40px;
+  margin-left: 0.7em;
+}
+header, #logo-big #fills, #visit-link{
+  /*opacity: 0;*/
+  /*animation: display 1.75s ease forwards;*/
+  /*animation-delay: 10s;*/
+}
+#logo-ico{
+  vertical-align: middle;
+  opacity: 0;
+  margin-left: -50px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+#logo-ico.visible{
+  opacity: 1;
+  margin-left: 20px;
+}
+.instant-show header, .instant-show #logo-big #fills, .instant-show #visit-link{
+  animation: none;
+  animation-delay: 0;
+  opacity: 1;
+}
+#social-links{
+  float: right;
+  margin-top: 30px;
+  margin-right: 45px;
+}
+#social-links a{
+  font-size: 40px;
+  width: 45px;
+  color: #fff;
+  margin-left: 45px;
+  position: relative;
+  display: inline-block;
+}
+#social-links a > *{
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+#social-links a circle{
+  stroke-dasharray: 0 1000;
+  transition: all 0.5s ease;
+}
+#social-links a:hover i{
+  animation: hue 3s linear infinite;
+}
+#social-links a svg{
+  transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  transition: all 0.5s ease;
+}
+#social-links a:hover svg{
+  transform: translateX(-50%) translateY(-50%) rotate(180deg);
+}
+#social-links a:hover circle{
+  stroke-dasharray: 190 0;
+}
+#logo-big, #intro, #home-text{
+  position: absolute;
+  left:50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 3
+}
+#logo-big, #home-text{
+  z-index: 5;
+}
+#logo-big:hover #fills path{
+  animation: hover 0.5s linear;
+}
+#logo-big.home-logo{
+  animation: logoBigSlideLeft 1s ease forwards;
+  animation-delay: 1s;
+}
+#home-text{
+  opacity: 0;
+  padding-left: 16px;
+  width: 480px;
+  box-sizing: content-box;
+  text-align: left;
+  left: 50%;
+  animation: homeTextSlideRight 1s ease forwards;
+  animation-delay: 1s;
+}
+#home-text p{
+  line-height: 1.5em;
+}
+.outline{
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-dasharray: 1328 2000;
+  animation: drawOutline 3.5s ease;
+  animation-delay: 8.25s;
+  opacity: 0;
+}
+.border{
+  stroke-width: 5px;
+  stroke-dasharray: 90 2000;
+  stroke-dashoffset: 90;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.b1{
+
+  stroke: #ED0091;
+  animation: draw 6s ease infinite;
+}
+.b2{
+  stroke: #FEFF32;
+  animation: draw 6s ease infinite;
+  animation-delay: 2s;
+}
+.b3{
+  stroke: #87F0FB;
+  animation: draw 6s ease infinite;
+  animation-delay: 4s;
+}
+h1, h2{
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 500;
+
+}
+h2 + p{
+  margin-bottom: 50px;
+}
+#background-moving-text span{
+  white-space:nowrap;
+  text-transform: uppercase;
+  font-size: 140px;
+  position: absolute;
+  font-weight: 900;
+  display: block;
+  width: auto;
+  left: 0;
+  padding: 0 0.2em;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+
+}
+.w1{
+  animation: scrollw1 20s linear infinite;
+}
+.w2{
+  animation: scrollw2 20s linear infinite;
+}
+.w3{
+  animation: scrollw3 20s linear infinite;
+}
+
+
+#background-moving-text{
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  /*animation: displayBackground 1.75s ease forwards;*/
+  /*animation-delay: 10s;*/
+  /*color: #322940;*/
+  color: #3c344a;
+}
+.row2 span{
+  top: 25vh;
+}
+.row3 span{
+  top: 50vh
+}
+.row4 span{
+  top: 75vh;
+}
+#background-moving{
+  background-image: url('../images/background.png') ;
+  background-color: #322940;
+  background-blend-mode: luminosity;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+#BorderLine{
+  stroke-dasharray: 0 2000;
+  animation: drawIntroLine 6s ease;
+  animation-delay: 4s;
+  fill: transparent;
+  opacity: 0;
+}
+#BorderDot{
+  stroke-dasharray: 0 2000;
+  stroke-linejoin: round;
+  animation: drawIntroDot 6s ease;
+  animation-delay: 4s;
+}
+#Rectangle1{
+  width: 0px;
+  animation: revealText 1s ease ;
+  animation-delay: 2s;
+}
+#Rectangle2{
+  width: 0px;
+  animation: revealText 1s ease ;
+  animation-delay: 2.3s;
+}
+#Rectangle3{
+  width: 0px;
+  animation: revealText 1s ease ;
+  animation-delay: 2.6s;
+}
+#Paul-Antoine{
+  opacity: 0;
+  animation: displayText 4.9s linear;
+  animation-delay: 2.3s;
+}
+#Web-development{
+  animation: displayText 4.6s linear;
+  animation-delay: 2.6s;
+  opacity: 0;
+}
+#Photography{
+  animation: displayText 4.3s linear;
+  animation-delay: 2.9s;
+  opacity: 0;
+}
+#visit-link{
+  color: #fff;
+  font-size: 24px;
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+}
+#visit-link .white{
+  color: #fff;
+}
+#visit-link .rect{
+  position: absolute;
+  overflow: hidden;
+  height: 3px;
+  width: 30px;
+  transform: translateX(-45px);
+  left: 50%;
+  bottom:0;
+}
+#visit-link .rect > div{
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-transform: uppercase;
+}
+#visit-link .rect .white,
+#visit-link .rect .background .text{
+  width:300px;
+  text-align: center;
+}
+#visit-link .rect .background{
+  width:30px;
+  height: 30px;
+  color: #322940;
+  overflow: hidden;
+}
+#visit-link .rect1 .background{
+  background-color: #FEFF32;
+}
+#visit-link .rect2{
+  transform: translateX(-15px);
+}
+#visit-link .rect2 .background{
+  background-color: #ED0091;
+}
+#visit-link .rect3{
+  transform: translateX(15px);
+}
+#visit-link .rect3 .background{
+  background-color: #87F0FB;
+}
+#visit-link.open .rect1{
+  animation: positionRect1 1s ease forwards;
+}
+#visit-link.open .rect2{
+  animation: positionRect2 1s ease forwards;
+}
+#visit-link.open .rect3{
+  animation: positionRect3 1s ease forwards;
+}
+#visit-link.open .rect1,
+#visit-link.open .rect2,
+#visit-link.open .rect3{
+  animation-delay: 0.5s;
+}
+/*#visit-link.open .rect1:hover .background,*/
+/*#visit-link.open .rect2:hover .background,*/
+/*#visit-link.open .rect3:hover .background,*/
+#visit-link.open .rect1.open .background,
+#visit-link.open .rect2.open .background,
+#visit-link.open .rect3.open .background{
+  animation: openMenuRect 0.5s ease forwards;
+}
+#visit-link .white{
+  transition: color 0.2s ease;
+}
+#visit-link.open .rect1:hover .white{
+  color: #FEFF32;
+}
+#visit-link.open .rect2:hover .white{
+  color: #ED0091;
+}
+#visit-link.open .rect3:hover .white{
+  color: #87F0FB;
+}
+#visit-link.open .rect1 .background,
+#visit-link.open .rect2 .background,
+#visit-link.open .rect3 .background{
+  animation: closeMenuRect 0.5s ease forwards;
+
+}
+#visit-link.open span{
+  animation: hide 0s linear forwards;
+  animation-delay: 0.5s;
+}
+.hide-animation{
+  animation: hide 1s ease forwards;
+}
+form{
+  max-width: 500px;
+  margin: 0 auto;
+}
+form > *{
+  opacity: 0;
+  font-size: 16px;
+  color: #fff;
+  background-color: transparent;
+  border: solid 2px #fff;
+  display: block;
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  margin: 20px 0;
+  transform: translateY(50px);
+  animation: fadeInUpCustom 0.5s ease forwards;
+  animation-delay: 0.5s;
+}
+
+form > *::placeholder{
+  color: #fff;
+  font-style: italic;
+  opacity:0.5;
+}
+form > *:focus{
+  outline: none;
+  border-color: #FEFF32;
+}
+.inside{
+  text-align: center;
+  color: #fff;
+  margin-top: 100px;
+}
+form > *:nth-child(2){
+  animation-delay: 0.6s;
+}
+form > *:nth-child(3){
+  animation-delay: 0.7s;
+}
+form > *:nth-child(4){
+  animation-delay: 0.8s;
+}
+.skills li{
+  list-style: none;
+  text-align: left;
+}
+.skills ul{
+  margin-left: 0;
+  padding-left: 0;
+}
+.skills h3{
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: left;
+  margin-top: 0;
+}
+.flex{
+  display: flex;
+  justify-content: space-between;
+}
+.skills .flex > div, .about-me{
+  font-family: 'Avenir';
+}
+.skills .flex > div:nth-child(2){
+  animation-delay: 0.6s;
+}
+.skills .flex > div:nth-child(3){
+  animation-delay: 0.7s;
+}
+.skills .flex {
+  width: 900px;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.cards{
+  display: flex;
+  justify-content: center;
+}
+.project-card{
+  width: 300px;
+  height: 200px;
+  margin: 20px;
+  background-color: #fff;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+.project-card:hover,
+.project-card.active{
+  opacity: 1;
+}
+.project-content p,
+.project-content a{
+  font-family: 'Avenir';
+  color: #ffffff;
+}
+.project-content{
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  animation-fill-mode: forwards;
+}
+
+.project-content.ng-enter{
+  animation: fadeInDelayed 1s ease;
+}
+.project-content.ng-leave{
+  animation: fadeOut 0.5s ease;
+}
+.project-content h2{
+  font-size: 24px;
+  font-weight:bold;
+  text-transform: inherit;
+  margin-bottom: 0;
+}
+.project-content .technologies{
+  margin-top: 5px;
+  font-family: inherit;
+  font-size: 18px;
+}
+.project-content .description{
+  font-size: 18px;
+  font-weight: 100;
+  line-height: 35px;
+  max-width: 900px;
+  text-align: left;
+  margin: 0 auto;
+}
+.project-content .website-link{
+  max-width: 900px;
+  text-align: right;
+  margin: 30px auto;
+}
+.project-content .website-link a {
+  border: solid 2px #fff;
+  padding: 7px;
+  text-decoration: none;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.project-content .website-link a:hover {
+  background-color: #fff;
+  color: #3c344a;
+}
+

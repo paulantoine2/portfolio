@@ -1,0 +1,23 @@
+
+
+<div class="inside">
+
+<div class="cards delayed-fadein">
+  <div class="project-card" ng-repeat="project in webProjects" ng-class="{ 'active' : project.active }" ng-click="activeProject($index)">
+  </div>
+</div>
+<div class="contents">
+  <div class="project-content animated" ng-repeat="project in webProjects" ng-if="project.active">
+    <h2>{{ project.title }}</h2>
+    <p class="technologies">
+      <span ng-repeat="techno in project.technologies">{{ techno }} - </span>
+    </p>
+    <p class="description">
+      {{ project.description }}
+    </p>
+    <div class="website-link">
+      <a href="{{ project.link }}" >{{ project.link }}</a>
+    </div>
+  </div>
+</div>
+</div>
