@@ -6,10 +6,14 @@ app.controller('IntroController', function($scope, $timeout, $location){
     $timeout(function(){
       $location.path("/home");
     }, 10000)
+
+
 });
 
-
-$('svg text tspan').each( function (){
-  txt = $(this).text().toUpperCase();
-  $(this).text(txt);
-})
+setTimeout(function(){
+  jQuery('svg tspan').each( function (){
+    txt = jQuery(this).text().toUpperCase();
+    jQuery(this).text(txt);
+    console.log(txt);
+  });
+},1000);

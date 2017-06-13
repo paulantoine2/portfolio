@@ -2,11 +2,24 @@
 <html ng-app="PortfolioApp" lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <meta name="description" content="Portfolio of Paul Antoine, French web developer.">
+  <meta name="keywords" content="portfolio, web, developer, website, web developer">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:url" content="http://antoine-paul.com">
+  <meta property="og:image" content="http://antoine-paul.com/fb_image.png">
+  <meta property="og:description" content="Full-stack junior Web developer working with Drupal, Node and AngularJs.">
+  <meta property="og:title" content="Paul Antoine - Web Developer - Portfolio">
+  <meta property="og:site_name" content="Paul Antoine - Web Developer">
+  <meta property="fb:app_id" content="271915029939800">
+  <title>Paul Antoine - Web Developer</title>
+  <link rel="icon" type="image/png" href="logo.png" />
   <link rel="stylesheet" href="app/css/animate.css" />
   <link rel="stylesheet" href="app/css/font-awesome.css" />
   <link rel="stylesheet" href="app/css/animations.css" />
   <link rel="stylesheet" href="app/css/style.css" />
+  <link rel="stylesheet" href="app/css/slick.css" />
+  <link rel="stylesheet" href="app/css/slick-theme.css" />
+
   <base href="/portfolio_angular/">
 </head>
 <body ng-controller="RouteController">
@@ -14,10 +27,15 @@
   <main class="fade animated" ng-view></main>
   <div id="visit-link" class="fade animated open" ng-include="'views/menu.html'" ng-if="location != '/'"></div>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script src="https://code.angularjs.org/1.6.4/angular-route.js"></script>
-<script src="https://code.angularjs.org/1.6.4/angular-animate.js"></script>
+<script src="https://code.angularjs.org/1.6.4/angular-animate.js"></script> -->
+<script src="app/lib/jquery.js"></script>
+<script src="app/lib/slick.js"></script>
+<script src="app/lib/angular/angular.js"></script>
+<script src="app/lib/angular/angular-route.js"></script>
+<script src="app/lib/angular/angular-animate.js"></script>
 <script src="app/app.js"></script>
 <script src="app/controller/home.js"></script>
 <script src="app/controller/web_projects.js"></script>

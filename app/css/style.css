@@ -11,11 +11,18 @@
   animation: fadeInUpCustom 0.5s ease forwards;
   animation-delay: 0.5s;
 }
+html{
+  width: 100vw;
+  overflow-y: hidden;
+}
 body{
   background-color: #322940;
-  font-family: 'Futura';
+  font-family: 'Avenir';
   margin: 0;
-  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  top: 0;
+
 }
 main{
 }
@@ -28,13 +35,16 @@ header{
 }
 header h1{
   display: inline-block;
-  font-style: 40px;
+  font-size: 2.5rem;
   margin-left: 0.7em;
 }
 header, #logo-big #fills, #visit-link{
   /*opacity: 0;*/
   /*animation: display 1.75s ease forwards;*/
   /*animation-delay: 10s;*/
+}
+p{
+  line-height: 30px;
 }
 #logo-ico{
   vertical-align: middle;
@@ -61,18 +71,21 @@ header, #logo-big #fills, #visit-link{
   margin-right: 45px;
 }
 #social-links a{
-  font-size: 40px;
+  font-size: 2.2rem;
   width: 45px;
   color: #fff;
   margin-left: 45px;
   position: relative;
   display: inline-block;
 }
-#social-links a > *{
+#social-links a > *, #contact-form, .web-projects{
   position: absolute;
   left: 50%;
   top:50%;
   transform: translateX(-50%) translateY(-50%);
+}
+.web-projects{
+  transform: translateX(-50%) translateY(-200%);
 }
 #social-links a circle{
   stroke-dasharray: 0 1000;
@@ -98,7 +111,10 @@ header, #logo-big #fills, #visit-link{
   transform: translateX(-50%) translateY(-50%);
   z-index: 3
 }
-#logo-big, #home-text{
+#logo-big{
+  z-index: 6;
+}
+#home-text{
   z-index: 5;
 }
 #logo-big:hover #fills path{
@@ -159,25 +175,6 @@ h1, h2{
 }
 h2 + p{
   margin-bottom: 50px;
-}
-#background-moving-text span{
-  white-space:nowrap;
-  text-transform: uppercase;
-  font-size: 140px;
-  position: absolute;
-  font-weight: 900;
-  display: block;
-  width: auto;
-  left: 0;
-  padding: 0 0.2em;
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
-
 }
 .w1{
   animation: scrollw1 20s linear infinite;
@@ -265,7 +262,7 @@ h2 + p{
 }
 #visit-link{
   color: #fff;
-  font-size: 24px;
+  font-size: 1.5rem;
   position: absolute;
   left: 50%;
   bottom: 40px;
@@ -368,13 +365,13 @@ form{
 }
 form > *{
   opacity: 0;
-  font-size: 16px;
+  font-size: 0.875rem;
   color: #fff;
   background-color: transparent;
   border: solid 2px #fff;
   display: block;
   width: 100%;
-  padding: 15px;
+  padding: 13px;
   box-sizing: border-box;
   margin: 20px 0;
   transform: translateY(50px);
@@ -414,7 +411,7 @@ form > *:nth-child(4){
   padding-left: 0;
 }
 .skills h3{
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 500;
   text-transform: uppercase;
   text-align: left;
@@ -424,8 +421,14 @@ form > *:nth-child(4){
   display: flex;
   justify-content: space-between;
 }
-.skills .flex > div, .about-me{
+.skills .flex > div, .about-me, span.big{
   font-family: 'Avenir';
+}
+.about-me a{
+  color: #fff;
+}
+span.big{
+  font-size: 3.125rem;
 }
 .skills .flex > div:nth-child(2){
   animation-delay: 0.6s;
@@ -445,16 +448,21 @@ form > *:nth-child(4){
   justify-content: center;
 }
 .project-card{
-  width: 300px;
-  height: 200px;
+  width: 200px;
+  height: 150px;
   margin: 20px;
   background-color: #fff;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-blend-mode: multiply;
   opacity: 0.5;
   -webkit-transition: opacity 0.2s;
   -moz-transition: opacity 0.2s;
   -ms-transition: opacity 0.2s;
   -o-transition: opacity 0.2s;
   transition: opacity 0.2s;
+  cursor: pointer;
 }
 .project-card:hover,
 .project-card.active{
@@ -483,7 +491,7 @@ form > *:nth-child(4){
   animation: fadeOut 0.5s ease;
 }
 .project-content h2{
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight:bold;
   text-transform: inherit;
   margin-bottom: 0;
@@ -491,12 +499,10 @@ form > *:nth-child(4){
 .project-content .technologies{
   margin-top: 5px;
   font-family: inherit;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 .project-content .description{
-  font-size: 18px;
   font-weight: 100;
-  line-height: 35px;
   max-width: 900px;
   text-align: left;
   margin: 0 auto;
@@ -505,6 +511,7 @@ form > *:nth-child(4){
   max-width: 900px;
   text-align: right;
   margin: 30px auto;
+  margin-bottom: 0;
 }
 .project-content .website-link a {
   border: solid 2px #fff;
@@ -520,4 +527,205 @@ form > *:nth-child(4){
   background-color: #fff;
   color: #3c344a;
 }
+#contact-form{
+  width: 100%;
+}
+#contact-form p{
+  margin-bottom: 40px;
+}
+#contact-form a{
+  color :#ffffff;
+}
+#social-links-button, #close-social-links{
+  display: none;
+}
 
+@media screen and (max-width: 1000px) and (min-width: 500px) {
+  #visit-link{
+    transform: translateX(-50%) scale(0.9);
+  }
+}
+@media all and (max-width: 500px){
+  header{
+    z-index: 10;
+    position: fixed;
+    background: linear-gradient(to top, rgba(50,41,64,0), rgba(50,41,64,1), rgba(50,41,64,1));
+  }
+  .inside{
+
+  }
+  .inside.web-projects{
+    margin-top: 100px;
+  }
+  #visit-link{
+    position: fixed;
+    background: linear-gradient(to bottom, rgba(50,41,64,0), rgba(50,41,64,1), rgba(50,41,64,1));
+    height: 60px;
+    width: 100vw;
+    z-index: 8;
+  }
+  #social-links a{
+    width:60px;
+    display: block;
+    height: 60px;
+    margin: 0;
+  }
+  header h1{
+    font-size: 1.5rem;
+    margin-left: 15px;
+  }
+  #logo-ico.visible{
+    margin-left: 10px;
+  }
+  #logo-ico{
+    height: 75px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+  }
+  #social-links-button, #close-social-links{
+    color: #ffffff;
+    font-size: 2.2rem;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    display: block;
+  }
+  #social-links{
+    position: fixed;
+    background-color: #322940;
+    border-left: solid 2px #fff;
+    height: 100vh;
+    width: 60px;
+    margin: 0;
+    top: 0;
+    right: -62px;
+    transition: all 0.2s ease;
+    padding-top: 120px;
+    z-index: 50;
+  }
+  #social-links.open{
+    right: 0;
+  }
+  #home-text{
+    width:100vw;
+    padding-left: 10px;
+    padding-right: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    left:50%;
+    animation: homeTextSlideDown 1s ease forwards;
+  }
+  #logo-big.home-logo{
+    animation: logoBigSlideUp 1s ease forwards;
+    height: 150px;
+  }
+  #intro, #logo-big{
+    height: 150px;
+  }
+  #home-text p{
+    font-size: 0.8em;
+  }
+  span.big{
+    font-size: 2em;
+  }
+  #visit-link{
+    bottom: 0;
+  }
+  #visit-link .rect .white, #visit-link .rect .background .text{
+    font-size: 14px;
+    width: 33.33vw;
+  }
+  #visit-link .rect .white{
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  #visit-link .rect .background .text{
+    bottom: 5px;
+    position: absolute;
+  }
+  #visit-link.open .rect1{
+    animation-name: positionRect1Mobile;
+  }
+  #visit-link.open .rect2{
+    animation-name: positionRect2Mobile;
+  }
+  #visit-link.open .rect3{
+    animation-name: positionRect3Mobile;
+  }
+  #visit-link.open .rect1 .background, #visit-link.open .rect2 .background, #visit-link.open .rect3 .background{
+    animation-name: closeMenuRectMobile;
+  }
+  #visit-link.open .rect1.open .background, #visit-link.open .rect2.open .background, #visit-link.open .rect3.open .background{
+    animation-name: openMenuRectMobile;
+  }
+  #visit-link .rect .background{
+    height: 3px;
+    bottom: 0;
+    top: auto;
+    right: 0;
+    width: 100%;
+  }
+  #contact-form form{
+    padding: 0 10px;
+  }
+  form > *{
+    margin: 10px 0;
+    font-size: 0.7em;
+  }
+  #contact-form p{
+    font-size: 0.8em;
+    margin-bottom: 20px;
+    margin-top: 40px;
+  }
+  #contact-form{
+    max-height: calc(100vh - 61px);
+    overflow: scroll;
+    padding: 40px 0;
+    box-sizing: border-box;
+  }
+  .skills .flex{
+    width: 100vw;
+  }
+  .skills li, .skills h3{
+    text-align: center;
+  }
+  .slick-dots li button:before{
+    color: #fff!important;
+    font-size: 18px!important;
+    transition: all 0.2s ease;
+  }
+  .slick-dots li.slick-active button:before{
+    transform: scale(1.7);
+    opacity: 1!important
+  }
+  .slick-dots{
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1s;
+  }
+  .project-content{
+    width: 100vw;
+    transform: translate(-50%);
+    font-size: 0.8rem;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .project-content .description{
+    line-height: 24px;
+  }
+  .project-content .technologies{
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+  }
+  .project-content h2{
+    font-size: 1rem;
+  }
+  .cards{
+    width: 100vw;
+  }
+  .project-card.slick-slide{
+    height: 100px;
+  }
+}

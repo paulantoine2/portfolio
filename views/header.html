@@ -1,21 +1,30 @@
 
-  <a href="home"><svg id="logo-ico" ng-class="location != '/3home' ? 'visible' : ''" width="50px" height="105px" viewBox="3190 -1236 304 420" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <a href="home"><svg id="logo-ico" ng-class="location != '/home' ? 'visible' : ''" width="50px" height="105px" viewBox="3190 -1236 304 420" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g id="fills" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(3192.000000, -1234.000000)">
       <path d="M190.364971,186.999371 L224.266633,169.944014 L186.937529,105.342823 L154.119841,124.27409 L190.364971,186.999371 Z M204.275512,40.6913438 L295.080736,169.099733 L290.327836,189.612213 L216.488039,232.207563 L262.83552,283.867797 L258.329995,304.618628 L217.307886,328.282712 L175.46593,255.871647 L113.211038,291.78411 L117.953076,367.984232 L113.211038,388.332196 L65.8427862,415.657126 L65.8427862,319.10904 L23.6841258,343.428757 L0,302.441361 L4.76029568,281.931715 L65.8427862,249.644393 L65.8427862,120.709678 L70.9915782,98.6742173 L204.275512,40.6913438 Z M147.987894,208.318568 L113.211038,148.134259 L113.211038,225.814221 L147.987894,208.318568 Z" id="Combined-Shape" fill="#87F0FB"></path>
       <path d="M197.59113,170.475562 L230.408818,151.544295 L191.724746,84.598216 L158.907058,103.529483 L197.59113,170.475562 Z M94.2735705,86.3320668 L209.062729,19.9467372 L299.452724,148.497561 L295.115053,168.867606 L221.275256,211.462957 L267.838239,264.076082 L263.117212,283.874022 L222.095102,307.538105 L180.253147,235.12704 L117.998255,271.039503 L122.778205,347.250547 L117.998255,367.58759 L70.6300032,394.91252 L70.6300032,298.364433 L28.4713427,322.68415 L4.78721692,281.696755 L9.84791652,261.397242 L70.6300032,243.714573 L70.6300032,99.9650718 L75.4408322,79.5848123 L94.2735705,86.3320668 Z M156.569021,194.139645 L117.998255,127.389652 L117.998255,216.389643 L156.569021,194.139645 Z" id="Combined-Shape" fill="#ED0091"></path>
       <path d="M163.694275,83.5827457 L202.378347,150.528824 L235.196035,131.597558 L196.511962,64.6514788 L163.694275,83.5827457 L163.694275,83.5827457 Z M99.0607874,66.3853296 L98.98804,66.2594342 L213.849946,0 L299.90227,148.920869 L226.062473,191.51622 L267.904429,263.927284 L226.882319,287.591368 L185.040364,215.180303 L122.785472,251.092766 L122.785472,347.640853 L75.4172201,374.965783 L75.4172201,278.417696 L33.2585596,302.737413 L9.57443384,261.750018 L75.4172201,223.767836 L75.4172201,80.0183346 L99.0607874,66.3853296 L99.0607874,66.3853296 Z M122.785472,196.442906 L161.356238,174.192908 L122.785472,107.442915 L122.785472,196.442906 L122.785472,196.442906 Z" id="Combined-Shape" fill="#FEFF32"></path>
     </g>
   </svg><h1>Paul Antoine</h1></a>
+  <div id="social-links-button"><i class="fa fa-bars" aria-hidden="true"></i></div>
   <div id="social-links">
-    <a href="contact">
-      <i class="fa fa-github" aria-hidden="true"></i>
-    </a>
-    <a href="/">
+    <div id="close-social-links"><i class="fa fa-times" aria-hidden="true"></i></div>
+    <a href="https://github.com/paulantoine2" target="_blank">
+      <i class="fa fa-github" aria-hidden="true"></i></a>
+    <a href="https://www.linkedin.com/in/paul-antoine-183707121/" target="_blank">
       <i class="fa fa-linkedin" aria-hidden="true"></i></a>
-    <a href="/">
+    <a href="https://www.facebook.com/paul.antoine.75" target="_blank">
       <i class="fa fa-facebook" aria-hidden="true"></i></a>
-    <a href="/">
+    <a href="https://www.instagram.com/paul.antoine2/" target="_blank">
       <i class="fa fa-instagram" aria-hidden="true"></i></a>
-    <a href="/">
+    <a href="https://500px.com/paulantoine" target="_blank">
       <i class="fa fa-500px" aria-hidden="true"></i></a>
   </div>
+  <script>
+    $('#social-links-button').click( function(e){
+      $('#social-links').addClass('open');
+    });
+    $('#close-social-links').click( function(e){
+      $('#social-links').removeClass('open');
+    });
+  </script>
