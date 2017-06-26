@@ -2,10 +2,22 @@
   <div id="contact-form">
     <p>Leave a message below or contact me at <a href="mailto:paul.antoine2@gmail.com">paul.antoine2@gmail.com</a></p>
     <form ng-submit="submitContact()">
-      <input type="text" placeholder="Name, Organisation" ng-model="name">
-      <input type="email" placeholder="E-mail address" ng-model="email">
-      <textarea name="" id="" cols="30" rows="10" placeholder="Message" ng-model="message"></textarea>
-      <input type="submit" value="Contact">
+      <div>
+
+        <input type="text" placeholder="Name, Organisation" ng-model="name" ng-class="{ 'error': nameError }">
+      </div>
+      <div>
+
+        <input type="email" placeholder="E-mail address" ng-model="email" ng-class="{ 'error': emailError }">
+      </div>
+      <div>
+
+        <textarea name="" id="" cols="30" rows="10" placeholder="Message" ng-model="message" ng-class="{ 'error': messageError }"></textarea>
+      </div>
+      <div>
+
+        <input type="submit" value="Contact">
+      </div>
     </form>
   </div>
 </div>

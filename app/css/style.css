@@ -35,7 +35,7 @@ header{
 }
 header h1{
   display: inline-block;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-left: 0.7em;
 }
 header, #logo-big #fills, #visit-link{
@@ -365,6 +365,12 @@ form{
 }
 form > *{
   opacity: 0;
+
+  transform: translateY(50px);
+  animation: fadeInUpCustom 0.5s ease forwards;
+  animation-delay: 0.5s;
+}
+form > div > *{
   font-size: 0.875rem;
   color: #fff;
   background-color: transparent;
@@ -374,17 +380,26 @@ form > *{
   padding: 13px;
   box-sizing: border-box;
   margin: 20px 0;
-  transform: translateY(50px);
-  animation: fadeInUpCustom 0.5s ease forwards;
-  animation-delay: 0.5s;
+  -webkit-transition: border-color 2s ease;
+  -moz-transition: border-color 2s ease;
+  -ms-transition: border-color 2s ease;
+  -o-transition: border-color 2s ease;
+  transition: border-color 2s ease;
 }
-
-form > *::placeholder{
+form > div > .error{
+  border-color: #ED0091;
+  -webkit-transition: none;
+  -moz-transition: none ;
+  -ms-transition: none ;
+  -o-transition: none ;
+  transition: none ;
+}
+form > div > *::placeholder{
   color: #fff;
   font-style: italic;
   opacity:0.5;
 }
-form > *:focus{
+form > div > *:focus{
   outline: none;
   border-color: #FEFF32;
 }
