@@ -1,0 +1,8 @@
+{
+  "title": "Dashboard - Cours des comptes",
+  "technologies": [
+    "CSS",
+    "jQuery"
+  ],
+  "description" : "Internal dashboard with news and events for 'La cours des comptes' of Paris, I only worked front fro this project, I did all the CSS and made a list of cards zith different effects on hover, using libraries like Masonry."
+}

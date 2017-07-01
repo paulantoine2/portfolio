@@ -4,7 +4,8 @@
 
 var app = angular.module("PortfolioApp", [
   'ngAnimate',
-  'ngRoute'
+  'ngRoute',
+  'ngResource'
 ]);
 
 app.config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider){
@@ -20,6 +21,9 @@ app.config(['$locationProvider', '$routeProvider', function($locationProvider, $
       controller: 'ContactController'}).
     when('/web-projects', {
       templateUrl: 'views/web_projects.html',
+      controller: 'WebProjectsController'}).
+    when('/web-projects/:id', {
+      templateUrl: 'views/web_project.detail.html',
       controller: 'WebProjectsController'}).
     when('/skills', {
       templateUrl: 'views/skills.html',

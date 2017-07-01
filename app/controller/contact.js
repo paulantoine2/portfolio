@@ -3,6 +3,8 @@
  */
 
 app.controller('ContactController', function($scope, $http, $timeout){
+  $scope.messageIsSent = false;
+  $scope.messageNotSent = false;
   $scope.submitContact = function(){
     if(!$scope.name) $scope.nameError = true;
     if(!$scope.email) $scope.emailError = true;
@@ -24,9 +26,10 @@ app.controller('ContactController', function($scope, $http, $timeout){
       data: postData,
       headers : {'Content-Type': 'application/x-www-form-urlencoded'}
     }).success(function(res){
-      console.log(res);
+      $scope.messageIsSent = (res == 1);
+      $scope.messageNotSent = (res != 1);
     }).error(function(error) {
-      console.log(error);
+      $scope.messageNotSent = true;
     });
   };
 

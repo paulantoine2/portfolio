@@ -1,5 +1,7 @@
 
-app.controller('RouteController', function($scope, $location){
+app.controller('RouteController', function($scope, $location, WebProject){
+  $scope.projects = WebProject.list();
+
   $scope.$on('$routeChangeStart', function(next, current) {
     $scope.location = $location.path();
     if($scope.location == '/skills'){

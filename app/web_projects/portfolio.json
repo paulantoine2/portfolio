@@ -1,0 +1,12 @@
+{
+  "title": "Portfolio",
+  "technologies": [
+    "Angular JS",
+    "CSS",
+    "jQuery"
+  ],
+  "description" : "I made everything from scratch using only AngularJS. The design is made by me too. I wanted my portfolio with lot of animations, so I had a lot of fun with CSS3 and SVGs !",
+  "link": "/",
+  "textLink": "antoine-paul.com",
+  "logo": "app/images/pdb.png"
+}

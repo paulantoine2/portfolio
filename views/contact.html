@@ -1,7 +1,7 @@
 <div class="inside" >
   <div id="contact-form">
     <p>Leave a message below or contact me at <a href="mailto:paul.antoine2@gmail.com">paul.antoine2@gmail.com</a></p>
-    <form ng-submit="submitContact()">
+    <form ng-submit="submitContact()" ng-class="{ 'sent': messageIsSent, 'not-sent': messageNotSent }">
       <div>
 
         <input type="text" placeholder="Name, Organisation" ng-model="name" ng-class="{ 'error': nameError }">
@@ -15,8 +15,7 @@
         <textarea name="" id="" cols="30" rows="10" placeholder="Message" ng-model="message" ng-class="{ 'error': messageError }"></textarea>
       </div>
       <div>
-
-        <input type="submit" value="Send message">
+        <button type="submit">Send message</button>
       </div>
     </form>
   </div>

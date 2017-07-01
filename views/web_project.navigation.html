@@ -1,0 +1,5 @@
+<ul>
+  <li ng-repeat="p in projects" ng-class="location == '/web-projects/' + p.slug ? 'active' : ''">
+    <a href="web-projects/{{ p.slug }}"><div class="name">{{ p.slug }}</div></a>
+  </li>
+</ul>

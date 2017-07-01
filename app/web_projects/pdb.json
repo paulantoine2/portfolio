@@ -1,0 +1,14 @@
+{
+  "title": "La Plateforme du Batiment",
+  "technologies": [
+    "Node JS",
+    "Angular JS",
+    "Drupal 8",
+    "CSS",
+    "jQuery"
+  ],
+  "description" : "This is a e-commerce hybrid website using Drupal as a backoffice and NodeJS + AngularJS as front. I worked full-stack on this project, mostly on the front (CSS & Angular). I made a pretty complex cart system, and all about orders. It was a really rewarding experience as web developer.",
+  "link": "https://www.laplateforme.com/",
+  "textLink": "www.laplateforme.com",
+  "logo": "app/images/pdb.png"
+}

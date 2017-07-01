@@ -1,0 +1,11 @@
+{
+  "title": "Ecole Arts et Metiers",
+  "technologies": [
+    "Drupal 8",
+    "jQuery"
+  ],
+  "description": "Basic content website for a school in Paris. I worked only back-end with Drupal 8 for this project.",
+  "link": "https://artsetmetiers.fr/",
+  "textLink": "artsetmetiers.fr",
+  "logo": "app/images/ensam.png"
+}

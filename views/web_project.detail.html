@@ -1,0 +1,16 @@
+<div class="inside web-project">
+  <div class="project-content animated">
+    <h2>{{ project.title }}</h2>
+    <p class="technologies">
+      <span ng-repeat="techno in project.technologies">{{ techno }} </span>
+    </p>
+    <p class="description">
+      {{ project.description }}
+    </p>
+    <div class="website-link" ng-if="project.textLink">
+      <a href="{{ project.link }}" target="_blank">{{ project.textLink }}</a>
+    </div>
+  </div>
+  <div class="mokup slideInDown animated" ng-style="{'background-image':'url(app/images/mokups/{{project.slug}}_mokup.png)'}">
+  </div>
+</div>
