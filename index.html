@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="PortfolioApp" lang="en">
+<html ng-app="PortfolioApp" ng-controller="RouteController" lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="description" content="Portfolio of Paul Antoine, French web developer.">
@@ -11,7 +11,7 @@
   <meta property="og:title" content="Paul Antoine - Web Developer - Portfolio">
   <meta property="og:site_name" content="Paul Antoine - Web Developer">
   <meta property="fb:app_id" content="271915029939800">
-  <title>Paul Antoine - Web Developer</title>
+  <title ng-bind="PageTitle.title()"></title>
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="stylesheet" href="app/css/animate.css" />
   <link rel="stylesheet" href="app/css/font-awesome.css" />
@@ -19,10 +19,9 @@
   <link rel="stylesheet" href="app/css/style.css" />
   <link rel="stylesheet" href="app/css/slick.css" />
   <link rel="stylesheet" href="app/css/slick-theme.css" />
-
   <base href="/portfolio_angular/">
 </head>
-<body ng-controller="RouteController">
+<body>
   <header class="fade animated" ng-include="'views/header.html'" ng-if="location != '/'"></header>
   <div class="navigation animated fade" ng-include="'views/web_project.navigation.html'" ng-if="location.startsWith('/web-projects')"></div>
   <main class="animated fade" ng-view></main>
@@ -40,16 +39,11 @@
 <script src="app/lib/angular/angular-resource.js"></script>
 <script src="app/app.js"></script>
 <script src="app/services/web_project.service.js"></script>
+<script src="app/services/title.service.js"></script>
 <script src="app/controller/home.js"></script>
 <script src="app/controller/web_projects.js"></script>
 <script src="app/controller/contact.js"></script>
 <script src="app/controller/skills.js"></script>
 <script src="app/controller/intro.js"></script>
 <script src="app/controller/route.js"></script>
-<script type="text/javascript">
-
-  $('#visit-link:not(.open) span').click( function(e){
-    $(this).parent().addClass('open');
-  });
-</script>
 </html>

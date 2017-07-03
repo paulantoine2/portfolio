@@ -1,10 +1,13 @@
 
-app.controller('RouteController', function($scope, $location, WebProject){
+app.controller('RouteController', function($scope, $location, WebProject, PageTitle){
   $scope.projects = WebProject.list();
+  $scope.PageTitle = PageTitle;
 
   $scope.$on('$routeChangeStart', function(next, current) {
     $scope.location = $location.path();
+
     if($scope.location == '/skills'){
+      $scope.PageTitle.setTitle('My skills');
       setTimeout(function(){
         if(jQuery(window).width() < 500){
           jQuery('.flex').slick({
@@ -13,27 +16,14 @@ app.controller('RouteController', function($scope, $location, WebProject){
           });
         }
       },400);
+    } else if($scope.location == '/contact'){
+      $scope.PageTitle.setTitle('Contact');
+    } else if($scope.location.startsWith('/web-projects')){
+      $scope.PageTitle.setTitle('Web projects');
+    } else {
+      $scope.PageTitle.setTitle('Paul Antoine - Web developer');
     }
-    if($scope.location == '/web-projects'){
-      setTimeout(function(){
-        if(jQuery(window).width() < 500){
-          // jQuery('.slider-for').slick({
-          //   slidesToShow: 1,
-          //   slidesToScroll: 1,
-          //   arrows: false,
-          //   fade: true,
-          //   asNavFor: '.slider-nav'
-          // });
-          jQuery('.slider-nav').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            dots: true,
-            arrows: false,
-            centerMode: true,
-            // asNavFor: '.slider-for'
-          });
-        }
-      },400);
-    }
+
+
   });
 });
