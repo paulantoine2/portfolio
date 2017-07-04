@@ -33,10 +33,10 @@ app.config(['$locationProvider', '$routeProvider', function($locationProvider, $
   $locationProvider.html5Mode(true);
 }]);
 
-app.run(function($rootScope, $templateCache) {
-  $rootScope.$on('$routeChangeStart', function(event, next, current) {
-    if (typeof(current) !== 'undefined'){
-      $templateCache.remove(current.templateUrl);
-    }
-  });
-});
+// app.run(function($rootScope, $templateCache) {
+//   $rootScope.$on('$routeChangeStart', function(event, next, current) {
+//     if (typeof(current) !== 'undefined'){
+//       $templateCache.remove(current.templateUrl);
+//     }
+//   });
+// });

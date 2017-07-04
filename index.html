@@ -13,13 +13,14 @@
   <meta property="fb:app_id" content="271915029939800">
   <title ng-bind="PageTitle.title()"></title>
   <link rel="icon" type="image/png" href="logo.png" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
   <link rel="stylesheet" href="app/css/animate.css" />
-  <link rel="stylesheet" href="app/css/font-awesome.css" />
-  <link rel="stylesheet" href="app/css/animations.css" />
-  <link rel="stylesheet" href="app/css/style.css" />
+  <link rel="stylesheet" href="app/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="app/css/animations.min.css" />
+  <link rel="stylesheet" href="app/css/style.min.css" />
   <link rel="stylesheet" href="app/css/slick.css" />
   <link rel="stylesheet" href="app/css/slick-theme.css" />
-  <base href="/portfolio_angular/">
+  <base href="/">
 </head>
 <body>
   <header class="fade animated" ng-include="'views/header.html'" ng-if="location != '/'"></header>
@@ -27,23 +28,19 @@
   <main class="animated fade" ng-view></main>
   <div id="visit-link" class="fade animated open" ng-include="'views/menu.html'" ng-if="location != '/'"></div>
 </body>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-<script src="https://code.angularjs.org/1.6.4/angular-route.js"></script>
-<script src="https://code.angularjs.org/1.6.4/angular-animate.js"></script> -->
-<script src="app/lib/jquery.js"></script>
-<script src="app/lib/slick.js"></script>
-<script src="app/lib/angular/angular.js"></script>
-<script src="app/lib/angular/angular-route.js"></script>
-<script src="app/lib/angular/angular-animate.js"></script>
-<script src="app/lib/angular/angular-resource.js"></script>
-<script src="app/app.js"></script>
-<script src="app/services/web_project.service.js"></script>
-<script src="app/services/title.service.js"></script>
-<script src="app/controller/home.js"></script>
-<script src="app/controller/web_projects.js"></script>
-<script src="app/controller/contact.js"></script>
-<script src="app/controller/skills.js"></script>
-<script src="app/controller/intro.js"></script>
-<script src="app/controller/route.js"></script>
+<script defer src="app/lib/jquery.js"></script>
+<script defer src="app/lib/slick.js"></script>
+<script defer src="app/lib/angular/angular.js"></script>
+<script defer src="app/lib/angular/angular-route.js"></script>
+<script defer src="app/lib/angular/angular-animate.js"></script>
+<script defer src="app/lib/angular/angular-resource.js"></script>
+<script defer src="app/app.js"></script>
+<script defer src="app/services/web_project.service.js"></script>
+<script defer src="app/services/title.service.js"></script>
+<script defer src="app/controller/home.js"></script>
+<script defer src="app/controller/web_projects.js"></script>
+<script defer src="app/controller/contact.js"></script>
+<script defer src="app/controller/skills.js"></script>
+<script defer src="app/controller/intro.js"></script>
+<script defer src="app/controller/route.js"></script>
 </html>
