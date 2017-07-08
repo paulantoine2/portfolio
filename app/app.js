@@ -2,6 +2,13 @@
  * Created by paulantoine on 16/04/2017.
  */
 
+if (!String.prototype.startsWith) {
+  String.prototype.startsWith = function(searchString, position) {
+    position = position || 0;
+    return this.indexOf(searchString, position) === position;
+  };
+}
+
 var app = angular.module("PortfolioApp", [
   'ngAnimate',
   'ngRoute',

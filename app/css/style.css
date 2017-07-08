@@ -1,14 +1,20 @@
 .ng-enter.fade{
+  -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
   /*animation-delay: 1s;*/
 }
 .ng-leave.fade{
+  -webkit-animation-name: fadeOut;
   animation-name: fadeOut;
+  -webkit-animation-duration: 0.6s;
   animation-duration: 0.6s;
 }
 .delayed-fadein{
   opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  -webkit-animation: fadeInUpCustom 0.5s ease forwards;
   animation: fadeInUpCustom 0.5s ease forwards;
+  -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
 }
 html{
@@ -48,21 +54,23 @@ p{
 #logo-ico{
   vertical-align: middle;
   opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   margin-left: -50px;
   -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
   transition: all 0.5s;
 }
 #logo-ico.visible{
   opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
   margin-left: 20px;
 }
 .instant-show header, .instant-show #logo-big #fills, .instant-show #visit-link{
+  -webkit-animation: none;
   animation: none;
+  -webkit-animation-delay: 0;
   animation-delay: 0;
   opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 #social-links{
   position: absolute;
@@ -83,32 +91,41 @@ p{
   position: absolute;
   left: 50%;
   top:50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 }
 .web-projects{
+  -webkit-transform: translateX(-50%) translateY(-200%);
   transform: translateX(-50%) translateY(-200%);
 }
 #social-links a circle{
   stroke-dasharray: 0 1000;
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 #social-links a:hover i{
+  -webkit-animation: hue 3s linear infinite;
   animation: hue 3s linear infinite;
 }
 #social-links a svg{
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(0deg);
   transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
 #social-links a:hover svg{
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(180deg);
   transform: translateX(-50%) translateY(-50%) rotate(180deg);
 }
 #social-links a:hover circle{
   stroke-dasharray: 190 0;
 }
+
 #logo-big, #intro, #home-text{
   position: absolute;
   left:50%;
   top: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
   z-index: 3
 }
@@ -119,20 +136,26 @@ p{
   z-index: 5;
 }
 #logo-big:hover #fills path{
+  -webkit-animation: hover 0.5s linear;
   animation: hover 0.5s linear;
 }
 #logo-big.home-logo{
+  -webkit-animation: logoBigSlideLeft 1s ease forwards;
   animation: logoBigSlideLeft 1s ease forwards;
+  -webkit-animation-delay: 1s;
   animation-delay: 1s;
 }
 #home-text{
   opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   padding-left: 16px;
   width: 480px;
   box-sizing: content-box;
   text-align: left;
   left: 50%;
+  -webkit-animation: homeTextSlideRight 1s ease forwards;
   animation: homeTextSlideRight 1s ease forwards;
+  -webkit-animation-delay: 1s;
   animation-delay: 1s;
 }
 #home-text p{
@@ -142,9 +165,12 @@ p{
   stroke: #fff;
   stroke-width: 2;
   stroke-dasharray: 1328 2000;
+  -webkit-animation: drawOutline 3.5s ease;
   animation: drawOutline 3.5s ease;
+  -webkit-animation-delay: 8.25s;
   animation-delay: 8.25s;
   opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
 .border{
   stroke-width: 5px;
@@ -156,16 +182,21 @@ p{
 .b1{
 
   stroke: #ED0091;
+  -webkit-animation: draw 6s ease infinite;
   animation: draw 6s ease infinite;
 }
 .b2{
   stroke: #FEFF32;
+  -webkit-animation: draw 6s ease infinite;
   animation: draw 6s ease infinite;
+  -webkit-animation-delay: 2s;
   animation-delay: 2s;
 }
 .b3{
   stroke: #87F0FB;
+  -webkit-animation: draw 6s ease infinite;
   animation: draw 6s ease infinite;
+  -webkit-animation-delay: 4s;
   animation-delay: 4s;
 }
 h1, h2{
@@ -178,12 +209,15 @@ h2 + p{
   margin-bottom: 50px;
 }
 .w1{
+  -webkit-animation: scrollw1 20s linear infinite;
   animation: scrollw1 20s linear infinite;
 }
 .w2{
+  -webkit-animation: scrollw2 20s linear infinite;
   animation: scrollw2 20s linear infinite;
 }
 .w3{
+  -webkit-animation: scrollw3 20s linear infinite;
   animation: scrollw3 20s linear infinite;
 }
 
@@ -220,46 +254,66 @@ h2 + p{
 }
 #BorderLine{
   stroke-dasharray: 0 2000;
+  -webkit-animation: drawIntroLine 6s ease;
   animation: drawIntroLine 6s ease;
+  -webkit-animation-delay: 4s;
   animation-delay: 4s;
   fill: transparent;
   opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
 #BorderDot{
   stroke-dasharray: 0 2000;
   stroke-linejoin: round;
+  -webkit-animation: drawIntroDot 6s ease;
   animation: drawIntroDot 6s ease;
+  -webkit-animation-delay: 4s;
   animation-delay: 4s;
 }
 #Rectangle1{
   width: 0px;
+  -webkit-animation: revealText 1s ease ;
   animation: revealText 1s ease ;
+  -webkit-animation-delay: 2s;
   animation-delay: 2s;
 }
 #Rectangle2{
   width: 0px;
+  -webkit-animation: revealText 1s ease ;
   animation: revealText 1s ease ;
+  -webkit-animation-delay: 2.3s;
   animation-delay: 2.3s;
 }
 #Rectangle3{
   width: 0px;
+  -webkit-animation: revealText 1s ease ;
   animation: revealText 1s ease ;
+  -webkit-animation-delay: 2.6s;
   animation-delay: 2.6s;
 }
 #Paul-Antoine{
   opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  -webkit-animation: displayText 4.9s linear;
   animation: displayText 4.9s linear;
+  -webkit-animation-delay: 2.3s;
   animation-delay: 2.3s;
 }
 #Web-development{
+  -webkit-animation: displayText 4.6s linear;
   animation: displayText 4.6s linear;
+  -webkit-animation-delay: 2.6s;
   animation-delay: 2.6s;
   opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
 #Photography{
+  -webkit-animation: displayText 4.3s linear;
   animation: displayText 4.3s linear;
+  -webkit-animation-delay: 2.9s;
   animation-delay: 2.9s;
   opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 }
 #visit-link{
   color: #fff;
@@ -267,6 +321,7 @@ h2 + p{
   position: absolute;
   left: 50%;
   bottom: 40px;
+  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 #visit-link .white{
@@ -277,6 +332,7 @@ h2 + p{
   overflow: hidden;
   height: 3px;
   width: 30px;
+  -webkit-transform: translateX(-45px);
   transform: translateX(-45px);
   left: 50%;
   bottom:0;
@@ -302,29 +358,35 @@ h2 + p{
   background-color: #FEFF32;
 }
 #visit-link .rect2{
+  -webkit-transform: translateX(-15px);
   transform: translateX(-15px);
 }
 #visit-link .rect2 .background{
   background-color: #ED0091;
 }
 #visit-link .rect3{
+  -webkit-transform: translateX(15px);
   transform: translateX(15px);
 }
 #visit-link .rect3 .background{
   background-color: #87F0FB;
 }
 #visit-link.open .rect1{
+  -webkit-animation: positionRect1 1s ease forwards;
   animation: positionRect1 1s ease forwards;
 }
 #visit-link.open .rect2{
+  -webkit-animation: positionRect2 1s ease forwards;
   animation: positionRect2 1s ease forwards;
 }
 #visit-link.open .rect3{
+  -webkit-animation: positionRect3 1s ease forwards;
   animation: positionRect3 1s ease forwards;
 }
 #visit-link.open .rect1,
 #visit-link.open .rect2,
 #visit-link.open .rect3{
+  -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
 }
 /*#visit-link.open .rect1:hover .background,*/
@@ -333,9 +395,11 @@ h2 + p{
 #visit-link.open .rect1.open .background,
 #visit-link.open .rect2.open .background,
 #visit-link.open .rect3.open .background{
+  -webkit-animation: openMenuRect 0.5s ease forwards;
   animation: openMenuRect 0.5s ease forwards;
 }
 #visit-link .white{
+  -webkit-transition: color 0.2s ease;
   transition: color 0.2s ease;
 }
 #visit-link.open .rect1:hover .white{
@@ -350,14 +414,18 @@ h2 + p{
 #visit-link.open .rect1 .background,
 #visit-link.open .rect2 .background,
 #visit-link.open .rect3 .background{
+  -webkit-animation: closeMenuRect 0.5s ease forwards;
   animation: closeMenuRect 0.5s ease forwards;
 
 }
 #visit-link.open span{
+  -webkit-animation: hide 0s linear forwards;
   animation: hide 0s linear forwards;
+  -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
 }
 .hide-animation{
+  -webkit-animation: hide 1s ease forwards;
   animation: hide 1s ease forwards;
 }
 form{
@@ -366,9 +434,14 @@ form{
 }
 form > *{
   opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+
+  -webkit-transform: translateY(50px);
 
   transform: translateY(50px);
+  -webkit-animation: fadeInUpCustom 0.5s ease forwards;
   animation: fadeInUpCustom 0.5s ease forwards;
+  -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
 }
 form > div > *{
@@ -382,23 +455,36 @@ form > div > *{
   box-sizing: border-box;
   margin: 20px 0;
   -webkit-transition: border-color 2s ease;
-  -moz-transition: border-color 2s ease;
-  -ms-transition: border-color 2s ease;
-  -o-transition: border-color 2s ease;
   transition: border-color 2s ease;
 }
 form > div > .error{
   border-color: #ED0091;
   -webkit-transition: none;
-  -moz-transition: none ;
-  -ms-transition: none ;
-  -o-transition: none ;
   transition: none ;
+}
+form > div > *::-webkit-input-placeholder{
+  color: #fff;
+  font-style: italic;
+  opacity:0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+}
+form > div > *::-moz-placeholder{
+  color: #fff;
+  font-style: italic;
+  opacity:0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+}
+form > div > *:-ms-input-placeholder{
+  color: #fff;
+  font-style: italic;
+  opacity:0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 }
 form > div > *::placeholder{
   color: #fff;
   font-style: italic;
   opacity:0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
 }
 form > div > *:focus{
   outline: none;
@@ -410,12 +496,15 @@ form > div > *:focus{
   margin-top: 100px;
 }
 form > *:nth-child(2){
+  -webkit-animation-delay: 0.6s;
   animation-delay: 0.6s;
 }
 form > *:nth-child(3){
+  -webkit-animation-delay: 0.7s;
   animation-delay: 0.7s;
 }
 form > *:nth-child(4){
+  -webkit-animation-delay: 0.8s;
   animation-delay: 0.8s;
 }
 .skills li{
@@ -434,7 +523,11 @@ form > *:nth-child(4){
   margin-top: 0;
 }
 .flex{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 .skills .flex > div, .about-me, span.big{
@@ -447,9 +540,11 @@ span.big{
   font-size: 3.125rem;
 }
 .skills .flex > div:nth-child(2){
+  -webkit-animation-delay: 0.6s;
   animation-delay: 0.6s;
 }
 .skills .flex > div:nth-child(3){
+  -webkit-animation-delay: 0.7s;
   animation-delay: 0.7s;
 }
 .skills .flex {
@@ -457,10 +552,15 @@ span.big{
   position: absolute;
   left: 50%;
   top:50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 }
 .cards{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 .project-card{
@@ -473,16 +573,15 @@ span.big{
   background-size: 80%;
   background-blend-mode: multiply;
   opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
   -webkit-transition: opacity 0.2s;
-  -moz-transition: opacity 0.2s;
-  -ms-transition: opacity 0.2s;
-  -o-transition: opacity 0.2s;
   transition: opacity 0.2s;
   cursor: pointer;
 }
 .project-card:hover,
 .project-card.active{
   opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 }
 .project-content p,
 .project-content a{
@@ -494,35 +593,37 @@ span.big{
   left: 50%;
   z-index: 10;
   -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
   transform: translateX(-50%);
+  -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
 .web-project .project-content{
   left: calc(50% - 450px);
   -webkit-transform: translateX(-200%);
-  -moz-transform: translateX(-200%);
-  -ms-transform: translateX(-200%);
-  -o-transform: translateX(-200%);
   transform: translateX(-200%);
   width: 600px;
+  -webkit-animation-delay: 0.5s;
   animation-delay: 0.5s;
+  -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
+  -webkit-animation-timing-function: cubic-bezier(.38,.85,.72,1);
   animation-timing-function: cubic-bezier(.38,.85,.72,1);
+  -webkit-animation-name: slideInDownWebProject;
   animation-name: slideInDownWebProject;
   bottom: 50%;
 }
 .ng-leave .project-content,
 .ng-leave .mokup{
+  -webkit-animation: slideOutDownFar cubic-bezier(.38,.85,.72,1) 1.2s;
   animation: slideOutDownFar cubic-bezier(.38,.85,.72,1) 1.2s;
 }
 
 .project-content.ng-enter{
+  -webkit-animation: fadeInDelayed 1s ease;
   animation: fadeInDelayed 1s ease;
 }
 .project-content.ng-leave{
+  -webkit-animation: fadeOut 0.5s ease;
   animation: fadeOut 0.5s ease;
 }
 .project-content h2{
@@ -558,9 +659,6 @@ span.big{
   padding: 7px;
   text-decoration: none;
   -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  -o-transition: all 0.2s;
   transition: all 0.2s;
 }
 .project-content .website-link a:hover {
@@ -574,9 +672,13 @@ span.big{
   background-size: 100%;
   right: calc(50% - 450px);
   bottom: 50%;
+  -webkit-animation-delay: 0.3s;
   animation-delay: 0.3s;
+  -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
+  -webkit-animation-timing-function: cubic-bezier(.38,.85,.72,1);
   animation-timing-function: cubic-bezier(.38,.85,.72,1);
+  -webkit-animation-name: slideInDownWebProject;
   animation-name: slideInDownWebProject;
 }
 #contact-form{
@@ -591,21 +693,17 @@ span.big{
 #contact-form button{
   position: relative;
   -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  -o-transition: all 0.2s;
   transition: all 0.2s;
 }
 #contact-form .sent button{
+  -webkit-transform: translateY(-190px);
   transform: translateY(-190px);
 }
 #contact-form .sent input,
 #contact-form .sent textarea{
   opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  -o-transition: all 0.2s;
   transition: all 0.2s;
 }
 #contact-form .sent button:before{
@@ -618,8 +716,6 @@ span.big{
   width: 100%;
   left: 0;
   top: 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding-top: 11px;
 
@@ -632,6 +728,7 @@ span.big{
   position: absolute;
   top: 50%;
   left: calc(50% - 530px);
+  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 .navigation .name{
@@ -647,13 +744,15 @@ span.big{
   position: relative;
   list-style: none;
   margin-bottom: 20px;
+  -webkit-transform: scale(0);
   transform: scale(0);
+  -webkit-animation: scaleIn ease 0.5s forwards;
   animation: scaleIn ease 0.5s forwards;
 }
-.navigation li:nth-child(2){ animation-delay: 0.1s; }
-.navigation li:nth-child(3){ animation-delay: 0.2s; }
-.navigation li:nth-child(4){ animation-delay: 0.3s; }
-.navigation li:nth-child(5){ animation-delay: 0.4s; }
+.navigation li:nth-child(2){ -webkit-animation-delay: 0.1s; animation-delay: 0.1s; }
+.navigation li:nth-child(3){ -webkit-animation-delay: 0.2s; animation-delay: 0.2s; }
+.navigation li:nth-child(4){ -webkit-animation-delay: 0.3s; animation-delay: 0.3s; }
+.navigation li:nth-child(5){ -webkit-animation-delay: 0.4s; animation-delay: 0.4s; }
 .ng-leave .navigation li{
 }
 .navigation a{
@@ -667,7 +766,11 @@ span.big{
   box-shadow: inset 0 0 0 6px #fff;
   border-radius: 50%;
   -webkit-transition: -webkit-transform 0.3s, box-shadow 0.3s;
+  -webkit-transition: box-shadow 0.3s, -webkit-transform 0.3s;
+  transition: box-shadow 0.3s, -webkit-transform 0.3s;
   transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, -webkit-transform 0.3s;
+  -webkit-animation: fadeIn ease 1s;
   animation: fadeIn ease 1s;
 }
 .navigation li.active a{
@@ -678,6 +781,7 @@ span.big{
 
 @media screen and (max-width: 1023px) and (min-width: 500px) {
   #visit-link{
+    -webkit-transform: translateX(-50%) scale(0.9);
     transform: translateX(-50%) scale(0.9);
   }
   .mokup{
@@ -696,15 +800,19 @@ span.big{
     width: 250px;
   }
   #visit-link.open .rect1.open .background, #visit-link.open .rect2.open .background, #visit-link.open .rect3.open .background{
+    -webkit-animation-name: openMenuRectTablet;
     animation-name: openMenuRectTablet;
   }
   #visit-link.open .rect1{
+    -webkit-animation-name: positionRect1Tablet;
     animation-name: positionRect1Tablet;
   }
   #visit-link.open .rect2{
+    -webkit-animation-name: positionRect2Tablet;
     animation-name: positionRect2Tablet;
   }
   #visit-link.open .rect3{
+    -webkit-animation-name: positionRect3Tablet;
     animation-name: positionRect3Tablet;
   }
   #social-links{
@@ -716,17 +824,17 @@ span.big{
   .skills .flex{
     width: 100vw;
     padding: 0 3%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
   #home-text{
     width: 60vw;
     left: auto;
+    -webkit-animation-name: homeTextSlideRightTablet;
     animation-name: homeTextSlideRightTablet;
   }
   #logo-big.home-logo{
     width: 34vw;
+    -webkit-animation-name: logoBigSlideLeftTablet;
     animation-name: logoBigSlideLeftTablet;
   }
 }
@@ -734,6 +842,7 @@ span.big{
   header{
     z-index: 10;
     position: fixed;
+    background: -webkit-linear-gradient(bottom, rgba(50,41,64,0), rgba(50,41,64,1), rgba(50,41,64,1));
     background: linear-gradient(to top, rgba(50,41,64,0), rgba(50,41,64,1), rgba(50,41,64,1));
   }
   .inside{
@@ -744,10 +853,12 @@ span.big{
   }
   #visit-link{
     position: fixed;
+    background: -webkit-linear-gradient(top, rgba(50,41,64,0), rgba(50,41,64,1), rgba(50,41,64,1));
     background: linear-gradient(to bottom, rgba(50,41,64,0), rgba(50,41,64,1), rgba(50,41,64,1));
     height: 60px;
     width: 100vw;
     z-index: 8;
+    -webkit-transform: translateX(-50%) scale(1)!important;
     transform: translateX(-50%) scale(1)!important;
   }
 
@@ -769,13 +880,13 @@ span.big{
     width:100vw;
     padding-left: 10px;
     padding-right: 10px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
     left:50%;
+    -webkit-animation: homeTextSlideDown 1s ease forwards;
     animation: homeTextSlideDown 1s ease forwards;
   }
   #logo-big.home-logo{
+    -webkit-animation: logoBigSlideUp 1s ease forwards;
     animation: logoBigSlideUp 1s ease forwards;
     height: 150px;
   }
@@ -797,6 +908,7 @@ span.big{
   }
   #visit-link .rect .white{
     top: 50%;
+    -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
   }
   #visit-link .rect .background .text{
@@ -804,18 +916,23 @@ span.big{
     position: absolute;
   }
   #visit-link.open .rect1{
+    -webkit-animation-name: positionRect1Mobile;
     animation-name: positionRect1Mobile;
   }
   #visit-link.open .rect2{
+    -webkit-animation-name: positionRect2Mobile;
     animation-name: positionRect2Mobile;
   }
   #visit-link.open .rect3{
+    -webkit-animation-name: positionRect3Mobile;
     animation-name: positionRect3Mobile;
   }
   #visit-link.open .rect1 .background, #visit-link.open .rect2 .background, #visit-link.open .rect3 .background{
+    -webkit-animation-name: closeMenuRectMobile;
     animation-name: closeMenuRectMobile;
   }
   #visit-link.open .rect1.open .background, #visit-link.open .rect2.open .background, #visit-link.open .rect3.open .background{
+    -webkit-animation-name: openMenuRectMobile;
     animation-name: openMenuRectMobile;
   }
   #visit-link .rect .background{
@@ -853,19 +970,26 @@ span.big{
   .slick-dots li button:before{
     color: #fff!important;
     font-size: 18px!important;
+    -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
   }
   .slick-dots li.slick-active button:before{
+    -webkit-transform: scale(1.7);
     transform: scale(1.7);
-    opacity: 1!important
+    opacity: 1!important;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
   }
   .slick-dots{
     opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-animation: fadeIn 1s ease forwards;
     animation: fadeIn 1s ease forwards;
+    -webkit-animation-delay: 1s;
     animation-delay: 1s;
   }
   .project-content{
     width: 100vw;
+    -webkit-transform: translate(-50%);
     transform: translate(-50%);
     font-size: 0.8rem;
     padding: 10px;
@@ -893,6 +1017,7 @@ span.big{
     width: 300px;
     height: 334px;
     opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
   }
   .web-project .project-content{
     left: 0;
@@ -910,6 +1035,7 @@ span.big{
   }
   .navigation{
     left: 50%;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     bottom: 50px;
     top: auto;
@@ -918,6 +1044,7 @@ span.big{
 }
 @media screen and (max-width: 730px){
   #visit-link{
+    -webkit-transform: translateX(-50%) scale(0.8);
     transform: translateX(-50%) scale(0.8);
   }
   .skills .flex{
@@ -929,6 +1056,7 @@ span.big{
 }
 @media screen and (max-width: 640px){
   #visit-link{
+    -webkit-transform: translateX(-50%) scale(0.7);
     transform: translateX(-50%) scale(0.7);
   }
   #social-links-button, #close-social-links{
@@ -948,6 +1076,7 @@ span.big{
     margin: 0;
     top: 0;
     right: -62px;
+    -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
     padding-top: 120px;
     z-index: 50;
@@ -964,6 +1093,19 @@ span.big{
 }
 @media screen and (max-width: 570px){
   #visit-link{
+    -webkit-transform: translateX(-50%) scale(0.6);
     transform: translateX(-50%) scale(0.6);
+  }
+}
+@media screen and (min-width: 1023px){
+  .inside.home{
+    height: 100vh;
+    width: 850px;
+    position: absolute;
+    top:0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    margin-top: 0;
   }
 }
