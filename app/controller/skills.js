@@ -2,7 +2,7 @@
  * Created by paulantoine on 16/04/2017.
  */
 
-app.controller('SkillsController', function($scope){
+app.controller('SkillsController', ['$scope', function($scope){
   $scope.languages = [
     'CSS(3)',
     'HTML(5)',
@@ -30,8 +30,9 @@ app.controller('SkillsController', function($scope){
     'Sketch',
     'Photoshop',
     'Filezilla',
-    'Unix command line'
+    'Unix command line',
+    'Grunt'
   ];
-});
+}]);
 
 

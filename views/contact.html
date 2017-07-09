@@ -15,7 +15,7 @@
         <textarea name="" id="" cols="30" rows="10" placeholder="Message" ng-model="message" ng-class="{ 'error': messageError }"></textarea>
       </div>
       <div>
-        <button type="submit">Send message</button>
+        <button type="submit" ng-disabled="messageIsSent">Send message</button>
       </div>
     </form>
   </div>

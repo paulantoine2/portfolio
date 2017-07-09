@@ -12,15 +12,11 @@
   <meta property="og:site_name" content="Paul Antoine - Web Developer">
   <meta property="fb:app_id" content="271915029939800">
   <title ng-bind="PageTitle.title()"></title>
+  <base href="/portfolio_angular/">
   <link rel="icon" type="image/png" href="logo.png" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-  <link rel="stylesheet" href="app/css/animate.css" />
-  <link rel="stylesheet" href="app/css/font-awesome.css" />
-  <link rel="stylesheet" href="app/css/animations.css" />
-  <link rel="stylesheet" href="app/css/style.css" />
-  <link rel="stylesheet" href="app/css/slick.css" />
-  <link rel="stylesheet" href="app/css/slick-theme.css" />
-  <base href="/portfolio_angular/">
+  <link rel="stylesheet" href="app/css/dist.css" />
+
 </head>
 <body>
   <header class="fade animated" ng-include="'views/header.html'" ng-if="location != '/'"></header>
@@ -28,19 +24,14 @@
   <main class="animated fade" ng-view></main>
   <div id="visit-link" class="fade animated open" ng-include="'views/menu.html'" ng-if="location != '/'"></div>
 </body>
-<script defer src="app/lib/jquery.js"></script>
-<script defer src="app/lib/slick.js"></script>
-<script defer src="app/lib/angular/angular.js"></script>
-<script defer src="app/lib/angular/angular-route.js"></script>
-<script defer src="app/lib/angular/angular-animate.js"></script>
-<script defer src="app/lib/angular/angular-resource.js"></script>
-<script defer src="app/app.js"></script>
-<script defer src="app/services/web_project.service.js"></script>
-<script defer src="app/services/title.service.js"></script>
-<script defer src="app/controller/home.js"></script>
-<script defer src="app/controller/web_projects.js"></script>
-<script defer src="app/controller/contact.js"></script>
-<script defer src="app/controller/skills.js"></script>
-<script defer src="app/controller/intro.js"></script>
-<script defer src="app/controller/route.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-102252045-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<script defer src="dist/built.min.js"></script>
 </html>

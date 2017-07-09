@@ -2,7 +2,7 @@
  * Created by paulantoine on 16/04/2017.
  */
 
-app.controller('WebProjectsController', function($scope, $timeout, $routeParams, WebProject){
+app.controller('WebProjectsController', ['$scope', '$timeout', '$routeParams', 'WebProject', function($scope, $timeout, $routeParams, WebProject){
 
   $scope.project = WebProject.get({id: $routeParams.id});
   $scope.project.slug = $routeParams.id;
@@ -31,4 +31,4 @@ app.controller('WebProjectsController', function($scope, $timeout, $routeParams,
 
 
 
-});
+}]);

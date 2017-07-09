@@ -1,10 +1,13 @@
 
-app.controller('RouteController', function($scope, $location, WebProject, PageTitle){
+app.controller('RouteController', ['$scope', '$location', 'WebProject', 'PageTitle', function($scope, $location, WebProject, PageTitle){
   $scope.projects = WebProject.list();
   $scope.PageTitle = PageTitle;
 
   $scope.$on('$routeChangeStart', function(next, current) {
     $scope.location = $location.path();
+
+    ga('set', 'page', $location.path());
+    ga('send', 'pageview');
 
     if($scope.location == '/skills'){
       $scope.PageTitle.setTitle('My skills');
@@ -26,4 +29,4 @@ app.controller('RouteController', function($scope, $location, WebProject, PageTi
 
 
   });
-});
+}]);

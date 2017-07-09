@@ -19,7 +19,7 @@
 }
 html{
   width: 100vw;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 body{
   background-color: #322940;
@@ -30,6 +30,11 @@ body{
   top: 0;
 }
 main{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
 }
 header{
   width: 100vw;
@@ -271,23 +276,24 @@ h2 + p{
   animation-delay: 4s;
 }
 #Rectangle1{
+  background-color: #ed0091;
   width: 0px;
-  -webkit-animation: revealText 1s ease ;
-  animation: revealText 1s ease ;
+  -webkit-animation: revealText 1s ease forwards;
+  animation: revealText 1s ease forwards;
   -webkit-animation-delay: 2s;
   animation-delay: 2s;
 }
 #Rectangle2{
   width: 0px;
-  -webkit-animation: revealText 1s ease ;
-  animation: revealText 1s ease ;
+  -webkit-animation: revealText 1s ease forwards;
+  animation: revealText 1s ease forwards;
   -webkit-animation-delay: 2.3s;
   animation-delay: 2.3s;
 }
 #Rectangle3{
   width: 0px;
-  -webkit-animation: revealText 1s ease ;
-  animation: revealText 1s ease ;
+  -webkit-animation: revealText 1s ease forwards;
+  animation: revealText 1s ease forwards;
   -webkit-animation-delay: 2.6s;
   animation-delay: 2.6s;
 }
@@ -591,11 +597,11 @@ span.big{
 .project-content{
   position: absolute;
   left: 50%;
-  z-index: 10;
+  z-index: 1;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
+  /*-webkit-animation-fill-mode: forwards;*/
+  /*animation-fill-mode: forwards;*/
 }
 .web-project .project-content{
   left: calc(50% - 450px);
@@ -682,7 +688,7 @@ span.big{
   animation-name: slideInDownWebProject;
 }
 #contact-form{
-  width: 100%;
+  width: 100vw;
 }
 #contact-form p{
   margin-bottom: 40px;
@@ -725,6 +731,7 @@ span.big{
 }
 .navigation{
   display: block;
+  z-index: 5;
   position: absolute;
   top: 50%;
   left: calc(50% - 530px);
@@ -981,6 +988,8 @@ span.big{
   }
   .slick-dots{
     opacity: 0;
+    left: 0;
+    right: 0;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
     -webkit-animation: fadeIn 1s ease forwards;
     animation: fadeIn 1s ease forwards;
@@ -1037,9 +1046,10 @@ span.big{
     left: 50%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
-    bottom: 50px;
+    bottom: 40px;
     top: auto;
     width: 100vw;
+    z-index: 10;
   }
 }
 @media screen and (max-width: 730px){
