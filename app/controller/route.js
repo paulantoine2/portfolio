@@ -1,6 +1,6 @@
 
 app.controller('RouteController', ['$scope', '$location', 'WebProject', 'PageTitle', function($scope, $location, WebProject, PageTitle){
-  $scope.projects = WebProject.list();
+  $scope.projects = WebProject.query();
   $scope.PageTitle = PageTitle;
 
   $scope.$on('$routeChangeStart', function(next, current) {

@@ -2,9 +2,11 @@
  * Created by paulantoine on 16/04/2017.
  */
 
-app.controller('WebProjectsController', ['$scope', '$timeout', '$routeParams', 'WebProject', function($scope, $timeout, $routeParams, WebProject){
+app.controller('WebProjectsController', ['$scope', '$timeout', '$routeParams', 'WebProject', '$sce', function($scope, $timeout, $routeParams, WebProject, $sce){
 
-  $scope.project = WebProject.get({id: $routeParams.id});
+  $scope.project = WebProject.get({id: $routeParams.id}, function(){
+    $scope.project.trusted_field_link = $sce.trustAsHtml($scope.project.field_link);
+  });
   $scope.project.slug = $routeParams.id;
 
 

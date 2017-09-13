@@ -42,7 +42,8 @@ function detectIE() {
 var app = angular.module("PortfolioApp", [
   'ngAnimate',
   'ngRoute',
-  'ngResource'
+  'ngResource',
+  'ngSanitize'
 ]);
 
 app.config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider){

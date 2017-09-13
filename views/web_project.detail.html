@@ -2,15 +2,13 @@
   <div class="project-content animated">
     <h2>{{ project.title }}</h2>
     <p class="technologies">
-      <span ng-repeat="techno in project.technologies">{{ techno }} </span>
+      {{ project.field_technologies }}
     </p>
-    <p class="description">
-      {{ project.description }}
+    <p class="description" ng-bind-html="project.field_description">
     </p>
-    <div class="website-link" ng-if="project.textLink">
-      <a href="{{ project.link }}" target="_blank">{{ project.textLink }}</a>
+    <div class="website-link" ng-if="project.field_link" ng-bind-html="project.trusted_field_link">
     </div>
   </div>
-  <div class="mokup slideInDown animated" ng-style="{'background-image':'url(app/images/mokups/{{project.slug}}_mokup.png)'}">
+  <div class="mokup slideInDown animated" ng-bind-html="project.field_mokup">
   </div>
 </div>
